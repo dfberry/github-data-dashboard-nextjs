@@ -5,6 +5,9 @@ export async function repos() {
   if(!base) throw Error("REACT_APP_FN_BASE is empty")
   if(!code) throw Error("REACT_APP_FN_ORG_CODE is empty")
 
+  console.log(`base = ${base}`)
+  console.log(`code = ${code}`)
+
   const url = `${base}/org?code=${code}`;
   console.log(`org url = ${url}`)
 
