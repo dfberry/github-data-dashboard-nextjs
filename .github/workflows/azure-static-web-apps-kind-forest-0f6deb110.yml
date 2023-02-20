@@ -2,6 +2,10 @@ name: Azure Static Web Apps CI/CD
 
 on:
   workflow_dispatch:
+  schedule:
+    # Associated build is at https://github.com/dfberry/actions-test for GraphQL nightly v1.15.1
+    # TBD: change to webhook
+    - cron: "0 9 * * *"  
   push:
     branches:
       - main
