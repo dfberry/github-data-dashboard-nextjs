@@ -1,16 +1,8 @@
 export async function repos() {
   try {
-    const base = process.env.REACT_APP_FN_BASE;
-    const code = process.env.REACT_APP_FN_ORG_CODE;
-
-    if (!base) throw Error("REACT_APP_FN_BASE is empty");
-    if (!code) throw Error("REACT_APP_FN_ORG_CODE is empty");
-
-    console.log(`base length = ${base.length}`);
-    console.log(`code = ${code.length}`);
-
-    const url = `${base}/org?code=${code}`;
-    console.log(`org url = ${url.length}`);
+    const url = process.env.REACT_APP_REPO_LIST_URL;
+    if (!url) throw Error("REACT_APP_REPO_LIST_URL is empty");
+    console.log(`url length = ${url.length}`);
 
     const response = await fetch(url);
 
