@@ -9,11 +9,9 @@ export function reportWebVitals(metric: NextWebVitalsMetric) {
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <AzureAppInsights>
     <Layout>
       <Component {...pageProps} />
     </Layout>
-    </AzureAppInsights>
   );
 }
 
