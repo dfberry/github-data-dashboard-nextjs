@@ -1,7 +1,12 @@
 export async function repos() {
   const base = process.env.REACT_APP_FN_BASE;
   const code = process.env.REACT_APP_FN_ORG_CODE;
+
+  if(!base) throw Error("REACT_APP_FN_BASE is empty")
+  if(!code) throw Error("REACT_APP_FN_ORG_CODE is empty")
+
   const url = `${base}/org?code=${code}`;
+  console.log(`org url = ${url}`)
 
   const response = await fetch(url);
 
@@ -11,7 +16,7 @@ export async function repos() {
     return json;
   } else {
     const error: any = await response.text();
-    console.log(error)
+    console.log(`repos fetch error ${JSON.stringify(error)}`)
     return [];
   }
 
