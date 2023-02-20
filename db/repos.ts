@@ -5,11 +5,11 @@ export async function repos() {
   if(!base) throw Error("REACT_APP_FN_BASE is empty")
   if(!code) throw Error("REACT_APP_FN_ORG_CODE is empty")
 
-  console.log(`base = ${base}`)
-  console.log(`code = ${code}`)
+  console.log(`base length = ${base.length}`)
+  console.log(`code = ${code.length}`)
 
   const url = `${base}/org?code=${code}`;
-  console.log(`org url = ${url}`)
+  console.log(`org url = ${url.length}`)
 
   const response = await fetch(url);
 
