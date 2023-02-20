@@ -38,6 +38,7 @@ jobs:
         env:
           REACT_APP_REPO_LIST_URL: ${{secrets.REACT_APP_REPO_LIST_URL}}
           REACT_APP_REPO_SUMMARY_URL: ${{secrets.REACT_APP_REPO_SUMMARY_URL}}
+          REACT_APP_MICROSOFT_APP_INSIGHTS_CONNECTION_STRING: ${{secrets.REACT_APP_MICROSOFT_APP_INSIGHTS_CONNECTION_STRING}}
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
