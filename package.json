@@ -1,5 +1,7 @@
 {
-  "name": "nextjs-dynamic-routes",
+  "name": "github-data-dashboard-nextjs",
+  "url":"https://github.com/dfberry/github-data-dashboard-nextjs",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

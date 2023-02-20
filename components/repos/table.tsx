@@ -113,7 +113,7 @@ function Table({ columns, data }: any) {
 function DataTableRepos({ data, collectionDate }: any): JSX.Element {
     const columns = [
         {
-            Header: `Azure-samples - ${data.length} repos`,
+            Header: `Azure-samples repos - ${data.length}`,
             columns: [
                 {
                     Header: '#',

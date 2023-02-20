@@ -4,8 +4,9 @@ import Link from "next/link";
 
 import DataTableRepos from "../../components/repos/table";
 import { repos as reposDB } from "../../db/repos";
+import { touch } from "../../db/touch";
 
-const Repo: NextPage<{ repos: IRepo[] }> = ({ repos }) => {
+const Repo: NextPage<{ repos: IRepo[], timestamp: string, version:string, url:string }> = ({ repos, timestamp, version, url }) => {
   return (
     <div>
       <Head>
@@ -13,12 +14,9 @@ const Repo: NextPage<{ repos: IRepo[] }> = ({ repos }) => {
       </Head>
 
       <main>
-        <h1>Repos</h1>
-
         <DataTableRepos data={repos}  />
-
-        <p style={{ color: "#0070f3" }}>
-          <Link href="/">Back Home</Link>
+        <p style={{ padding: 20 }}>
+            Generated: <a style={{ color: "#0070f3"}} href={url}>{version} - { timestamp }</a>
         </p>
       </main>
     </div>
@@ -28,10 +26,14 @@ const Repo: NextPage<{ repos: IRepo[] }> = ({ repos }) => {
 export const getStaticProps: GetStaticProps = async () => {
 
   const repos = await reposDB();
+  const { timestamp, version, url} = touch();
 
   return {
     props: {
       repos,
+      timestamp,
+      version,
+      url
     },
   };
 };
