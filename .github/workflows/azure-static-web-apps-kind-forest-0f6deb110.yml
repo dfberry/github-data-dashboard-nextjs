@@ -32,12 +32,8 @@ jobs:
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
         env:
-          REACT_APP_FN_BASE: ${{ secrets.REACT_APP_FN_BASE }}
-          REACT_APP_FN_REPO_CODE: ${{ secrets.REACT_APP_FN_REPO_CODE }}
-          REACT_APP_FN_ORG_CODE: ${{ secrets.REACT_APP_FN_ORG_CODE }}
-          REACT_APP_FN_SUMMARY_CODE: ${{ secrets.REACT_APP_FN_SUMMARY_CODE }}
-          REACT_APP_FN_LAST_CODE: ${{secrets.REACT_APP_FN_LAST_CODE}}
           REACT_APP_REPO_LIST_URL: ${{secrets.REACT_APP_REPO_LIST_URL}}
+          REACT_APP_REPO_SUMMARY_URL: ${{secrets.REACT_APP_REPO_SUMMARY_URL}}
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
