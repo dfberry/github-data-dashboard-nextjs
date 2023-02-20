@@ -1,4 +1,7 @@
 export async function repos() {
+
+try{
+
   const base = process.env.REACT_APP_FN_BASE;
   const code = process.env.REACT_APP_FN_ORG_CODE;
 
@@ -22,6 +25,10 @@ export async function repos() {
     console.log(`repos fetch error ${JSON.stringify(error)}`)
     return [];
   }
+}catch(err){
+    console.log(`repos function error = ${JSON.stringify(err)}`)
+    return [];
+}
 
   // json.map((repo:any):any =>{
   //   return repo.repositoryName = repo.repositoryName.toLowerCase()
