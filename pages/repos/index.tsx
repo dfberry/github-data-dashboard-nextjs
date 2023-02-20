@@ -3,8 +3,8 @@ import Head from "next/head";
 import Link from "next/link";
 
 import DataTableRepos from "../../components/repos/table";
-import { repos as reposDB } from "../../db/repos";
-import { touch } from "../../db/touch";
+import { repos as reposDB } from "../../ssg/repos";
+import { touch } from "../../ssg/touch";
 
 const Repo: NextPage<{ repos: IRepo[], timestamp: string, version:string, url:string }> = ({ repos, timestamp, version, url }) => {
   return (
@@ -16,7 +16,7 @@ const Repo: NextPage<{ repos: IRepo[], timestamp: string, version:string, url:st
       <main>
         <DataTableRepos data={repos}  />
         <p style={{ padding: 20 }}>
-            Generated: <a style={{ color: "#0070f3"}} href={url}>{version} - { timestamp }</a>
+            Generated: {version} - { timestamp }
         </p>
       </main>
     </div>
